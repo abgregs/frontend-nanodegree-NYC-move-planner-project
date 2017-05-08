@@ -15,13 +15,35 @@
           <input id="show-listings" type="button" value="Show Listings">
           <input id="hide-listings" type="button" value="Hide Listings">
           <hr>
+          <h2>Find listings within a drawing on the map</h2>
           <span class="text"> Draw a shape to search within it for homes!</span>
           <input id="toggle-drawing"  type="button" value="Drawing Tools">
         </div>
         <hr>
         <div>
+          <h2>Zoom in to an area of interest</h2>
           <input id='zoom-to-area-text' type='text' placeholder='Enter the name or address of a place!'>
           <input id='zoom-to-area' type='button' value='Zoom' />
+        </div>
+        <hr>
+        <div>
+          <h2>Find listings close to specified location</h2>
+          <span class="text"> Within </span>
+          <select id="max-duration">
+            <option value="10">10 min</option>
+            <option value="15">15 min</option>
+            <option value="30">30 min</option>
+            <option value="60">1 hour</option>
+          </select>
+          <select id="mode">
+            <option value="DRIVING">drive</option>
+            <option value="WALKING">walk</option>
+            <option value="BICYCLING">bike</option>
+            <option value="TRANSIT">transit ride</option>
+          </select>
+          <span class="text">of</span>
+          <input id="search-within-time-text" type="text" placeholder="Ex: 75 9th Ave, New York, NY">
+          <input id="search-within-time" type="button" value="Go">
         </div>
       </div>
       <div id="map">
