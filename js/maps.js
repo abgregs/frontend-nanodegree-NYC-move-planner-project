@@ -76,7 +76,6 @@ function initMap() {
   ];
 
 
-
   // Constructor creates a new map - only center and zoom are required.
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.7413549, lng: -73.9980244},
@@ -85,6 +84,14 @@ function initMap() {
     mapTypeControl: false
     });
 
+    // This autocomplete is for use in the search within time entry box.
+    var timeAutocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('search-within-time-text'));
+    // This autocomplete is for use in the geocoder entry box.
+    var zoomAutocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('zoom-to-area-text'));
+    //Bias the boundaries within the map for the zoom to area text.
+    zoomAutocomplete.bindTo('bounds', map);
 
   // These are the real estate listings that will be shown to the user.
   // Normally we'd have these in a database instead.
